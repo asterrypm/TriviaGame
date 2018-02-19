@@ -1,18 +1,26 @@
+
+//Create a function and object that identifies the variables for the trivia questions and answers in an array
+//create the variables within the object for two timers: once that times the question and one that handles the transition to the next question
+//create a function containing the counters for correct and incorrect answers
+
+
+
 $.fn.trivia = function() {
-    var _t = this;
-    _t.userPick = null;
-    _t.answers = {
+    var tva = this;
+    tva.playerPick = null;
+    tva.answers = {
         correct: 0,
         incorrect: 0
     };
-    _t.images = null;
-    _t.count = 30;
-    _t.current = 0;
-    _t.questions = [{
+    tva.images = null;
+    tva.count = 30;
+    tva.current = 0;
+    tva.questions = [{
         question: "In Aladdin, what is the name of Jasmine's pet tiger?",
         choices: ["Rajah", "Bo", "Iago", "Jack"],
-        images: ["../images/Rajah.gif"],
         correct: 0
+        //images: ["../images/Rajah.gif"],//
+        
     }, {
         question: "In Peter Pan, Captain Hook had a hook on which part of his     body?",
         choices: ["Right Foot", "Left Hand", "Left Foot", "Right Hand"],
@@ -48,11 +56,13 @@ $.fn.trivia = function() {
         choices: ["Whimsical", "Miserable", "Joyful", "Twitterpatted"],
         correct: 3
     }];
-    _t.ask = function() {
-        if (_t.questions[_t.current]) {
-            $("#timer").html("Time remaining: " + "00:" + _t.count + " secs");
-            $("#question_div").html(_t.questions[_t.current].question);
-            var choicesArr = _t.questions[_t.current].choices;
+
+    //create a function that asks the question and initiates the timer using the start button and puts 30 seconds on the clock.//
+    tva.ask = function() {
+        if (tva.questions[tva.current]) {
+            $("#timer").html("Time remaining: " + "00:" + tva.count + " secs");
+            $("#question_div").html(tva.questions[tva.current].question);
+            var choicesArr = tva.questions[tva.current].choices;
             var buttonsArr = [];
 
             for (var i = 0; i < choicesArr.length; i++) {
@@ -61,50 +71,52 @@ $.fn.trivia = function() {
                 button.attr('data-id', i);
                 $('#choices_div').append(button);
             }
-            window.triviaCounter = setInterval(_t.timer, 1000);
+            window.triviaCounter = setInterval(tva.timer, 1000);
         } else {
-            $('body').append($('<div />', {
+            //display the number of correct and incorrect answers in the browser//
+            $('body').append($('</div>', {
                 text: 'Unanswered: ' + (
-                    _t.questions.length - (_t.answers.correct + _t.answers.incorrect)),
+                    tva.questions.length - (tva.answers.correct + tva.answers.incorrect)),
                 class: 'result'
             }));
             $('#start_button').text('Restart').appendTo('body').show();
         }
     };
-    _t.timer = function() {
-        _t.count--;
-        if (_t.count <= 0) {
+    tva.timer = function() {
+        tva.count--;
+        if (tva.count <= 0) {
             setTimeout(function() {
-                _t.nextQ();
+                tva.nextQ();
             });
 
         } else {
-            $("#timer").html("Time remaining: " + "00:" + _t.count + " secs");
+            $("#timer").html("Time remaining: " + "00:" + tva.count + " secs");
         }
     };
-    _t.nextQ = function() {
-        _t.current++;
+    //Clear the timer and reset to 30 on each question and display next question//
+    tva.nextQ = function() {
+        tva.current++;
         clearInterval(window.triviaCounter);
-        _t.count = 30;
+        tva.count = 30;
         $('#timer').html("");
         setTimeout(function() {
-            _t.cleanUp();
-            _t.ask();
+            tva.cleanUp();
+            tva.ask();
         }, 1000)
     };
-    _t.cleanUp = function() {
+    tva.cleanUp = function() {
         $('div[id]').each(function(item) {
             $(this).html('');
         });
-        $('.correct').html('Correct answers: ' + _t.answers.correct);
-        $('.incorrect').html('Incorrect answers: ' + _t.answers.incorrect);
+        $('.correct').html('Correct answers: ' + tva.answers.correct);
+        $('.incorrect').html('Incorrect answers: ' + tva.answers.incorrect);
     };
-    _t.answer = function(correct) {
+    tva.answer = function(correct) {
         var string = correct ? 'correct' : 'incorrect';
-        _t.answers[string]++;
-        $('.' + string).html(string + ' answers: ' + _t.answers[string]);
+        tva.answers[string]++;
+        $('.' + string).html(string + ' answers: ' + tva.answers[string]);
     };
-    return _t;
+    return tva;
 };
 var Trivia;
 
@@ -118,16 +130,17 @@ $("#start_button").click(function() {
 
 $('#choices_div').on('click', 'button', function(e) {
     var userPick = $(this).data("id"),
-        _t = Trivia || $(window).trivia(),
-        index = _t.questions[_t.current].correct,
-        correct = _t.questions[_t.current].choices[index];
+        tva = Trivia || $(window).trivia(),
+        index = tva.questions[tva.current].correct,
+        correct = tva.questions[tva.current].choices[index];
 
+        //Display in browser whether or not the answer is correct or incorrect.//
     if (userPick !== index) {
-        $('#choices_div').text("Wrong Answer! The correct answer was: " + correct);
-        _t.answer(false);
+        $('#choices_div').text("Wrong Answer! The correct answer is: " + correct);
+        tva.answer(false);
     } else {
-        $('#choices_div').text("Correct!!! The correct answer was: " + correct);
-        _t.answer(true);
+        $('#choices_div').text("Correct! The correct answer is: " + correct);
+        tva.answer(true);
     }
-     _t.nextQ();
+     tva.nextQ();
 });
