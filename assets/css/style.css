@@ -1,6 +1,68 @@
+* {
+	box-sizing: border-box;
+}
+
+body { 
+
+	background-image: url("../images/skyscraper.png")
+ }
+
 div {
   margin-bottom: 20px;
 }
 .correct, .incorrect {
   text-transform: capitalize;
 }
+
+button {
+    text-align: center;
+    background-color: #eaeaea;
+    color: #444;
+    cursor: pointer;
+    padding: 10px 0;
+    font-size: 1.2em;
+    width: 85%;
+    margin: 6px auto;
+    border: 2px solid #d6d6d6;
+    display: block;
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+	overflow: auto;
+
+}
+   
+.jumbotron {
+	color: blue;
+	text-align: center; 
+	padding: 100px 100px 25px 100px;
+}
+
+.panel-body {
+	background: white;
+}
+
+.panels {
+	color: blue;
+	align-items: center;
+}
+
+p {
+	text-align: center;
+	color: black;
+}
+
+#subheader {
+	text-align: center;
+	color: white;
+	font-style: bold;
+	outline-style: solid blue;
+}
+
+.images {
+	width: 270px;
+	height: 150px;
+}
+

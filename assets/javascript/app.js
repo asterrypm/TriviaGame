@@ -16,45 +16,53 @@ $.fn.trivia = function() {
     tva.count = 30;
     tva.current = 0;
     tva.questions = [{
-        question: "In Aladdin, what is the name of Jasmine's pet tiger?",
-        choices: ["Rajah", "Bo", "Iago", "Jack"],
+        images: ["../images/Kileaua.jpg"],
+        question: "Where can the most active volcano in the world be found?",
+        choices: ["Kileaua Volcano - United States", "Etna Volcano - Italy", "Ambrym Volcano - Vanuatu", "Eyjafjallajokull Volcano - Iceland"],
         correct: 0
-        //images: ["../images/Rajah.gif"],//
+        
         
     }, {
-        question: "In Peter Pan, Captain Hook had a hook on which part of his     body?",
-        choices: ["Right Foot", "Left Hand", "Left Foot", "Right Hand"],
-        correct: 1
-
-    }, {
-        question: "In the Lion King, where does Mufasa and his family live?",
-        choices: ["Rocky Mountain", "Forest", "Desert", "Pride Rock"],
+        images: ["../images/guernica.jpg"],
+        question: "Where can you see this painting: 'Guernica'?",
+        choices: ["Colombia", "Brazil", "Mexico", "Spain"],
         correct: 3
+        
+    }, {
+        images: ["../images/Saltoangel.jpg"],
+        question: "Where can you find the tallest waterfall?",
+        choices: ["Gullfoss - Iceland", "Yosemite Falls - United States", "Angel Falls - Venezuela", "Iguazu Falls - Brazil"],
+        correct: 2
 
     }, {
-        question: "In Beauty and the Beast, how many eggs does Gaston eat for    breakfast?",
-        choices: ["2 Dozen", "5 Dozen", "5000", "0"],
-        correct: 1
-
-    }, {
-        question: "In Alice in Wonderland, what is the name of Alice’s kitten?",
-        choices: ["Dinah", "Sammie", "Kat", "Luna"],
+        images: ["../images/Copacabana.jpg"],
+        question: "What country has the largest population of Portuguese speakers?",
+        choices: ["Brazil", "Portugal", "Argentina", "Spain"],
         correct: 0
 
     }, {
-        question: "After being on earth, where did Hercules first meet his   father Zeus?",
-        choices: ["Mount Olympus", "Greece", "In the Temple of Zeus", "Elysian   Fields"],
+        images: ["../images/boxjellyfish.jpg"],
+        question: "What country has the most deadly animals?",
+        choices: ["Namibia", "Panama", "Australia", "Honduras"],
         correct: 2
 
     }, {
-        question: "During the ballroom scene of Beauty & the Beast, what color is Belle’s Gown?",
-        choices: ["Yellow", "Blue", "Gold", "White"],
-        correct: 2
-
-    }, {
-        question: "In Bambi, what word does the owl use to describe falling in love?",
-        choices: ["Whimsical", "Miserable", "Joyful", "Twitterpatted"],
+        images: ["../images/manta.jpg"],
+        question: "Ranked as one of the best dives in the entire world, where can you go scuba diving with Manta Rays?",
+        choices: ["Palau - Micronesia", "Great Barrier Reef- Australia", "Jaco Beach - Costa Rica", "Big Island - United States"],
         correct: 3
+
+    }, {
+        images: ["../images/machupicchu.jpg"],
+        question: "In what country would you find this ancient structure of Machu Picchu?",
+        choices: ["Peru", "Chile", "Mexico", "Cuba"],
+        correct: 0
+
+    }, {
+        images: ["../images/olympics.jpg"],
+        question: "Which country has had the honor of hosting the most Olympic Games?",
+        choices: ["France", "United States", "Russia", "Japan"],
+        correct: 1
     }];
 
     //create a function that asks the question and initiates the timer using the start button and puts 30 seconds on the clock.//
