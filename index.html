@@ -3,33 +3,53 @@
 <head>
 	<title>Trivia</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="Assets/css/reset.css">
 
-	 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
 <body>
 
-	
-	<header>TRAVEL TRIVIA</header>
+	<header>
+		<div class="container">
+			<h2 id="header_name">TRAVEL TRIVIA</h2>
+		</div>
+	</header>
 
+	<div class="container">
 
-				<button id="start_button">start game</button>
+		<section class="main-content">
+			<img id="coverphoto" src="assets/images/coverphoto.jpg" alt="map picture">
+
+			<button id="start_button">start game</button>
 
 				<div id="timer"></div>
 
-				<div class="images"></div>
-
 				<div id="question_div"></div>
+
+				<div class="images"></div>
 
 				<div id="choices_div"></div>
 					
 				<div class="correct"></div>
 
 				<div class="incorrect"></div>
-		   
-			<script src="assets/javascript/app.js"></script>
+
+	<script src="assets/javascript/app.js"></script>
+
+
+			
+		</section>
+
+	</div>
+		
+	<Footer>
+		<p id="footer_text">&copy; Copyright 2018 Amy Sterry</p>
+	</Footer>
+
+
+	
 		
 			
 </body>
