@@ -1,8 +1,7 @@
 
 //Create a function and object that identifies the variables for the trivia questions and answers in an array
 //create the variables within the object for two timers: once that times the question and one that handles the transition to the next question
-//create a function containing the counters for correct and incorrect answers
-
+//create a function containing the counters for correct and 
 
 
 $.fn.trivia = function() {
@@ -16,7 +15,7 @@ $.fn.trivia = function() {
     tva.count = 30;
     tva.current = 0;
     tva.questions = [{
-        images: ["../images/Kileaua.jpg"],
+        images: ["Kileaua.jpg"],
         question: "Where can the most active volcano in the world be found?",
         choices: ["Kileaua Volcano - United States", "Etna Volcano - Italy", "Ambrym Volcano - Vanuatu", "Eyjafjallajokull Volcano - Iceland"],
         correct: 0
@@ -59,7 +58,25 @@ $.fn.trivia = function() {
         correct: 0
 
     }, {
-        images: ["../images/olympics.jpg"],
+        images: ["../images/machupicchu.jpg"],
+        question: "In what country would you find this ancient structure of Machu Picchu?",
+        choices: ["Peru", "Chile", "Mexico", "Cuba"],
+        correct: 0
+
+    }, {
+        images: ["../images/machupicchu.jpg"],
+        question: "In what country would you find this ancient structure of Machu Picchu?",
+        choices: ["Peru", "Chile", "Mexico", "Cuba"],
+        correct: 0
+
+    },  {
+        images: ["../images/machupicchu.jpg"],
+        question: "In what country would you find this ancient structure of Machu Picchu?",
+        choices: ["Peru", "Chile", "Mexico", "Cuba"],
+        correct: 0
+
+    },  {
+        images:["../images/olymp ics.jpg"],
         question: "Which country has had the honor of hosting the most Olympic Games?",
         choices: ["France", "United States", "Russia", "Japan"],
         correct: 1
@@ -70,10 +87,14 @@ $.fn.trivia = function() {
         if (tva.questions[tva.current]) {
             $("#timer").html("Time remaining: " + "00:" + tva.count + " secs");
             $("#question_div").html(tva.questions[tva.current].question);
+            var imgSrc = tva.questions[tva.current].images[0];
+            var image = $('<img class="gameImage" src="assets/images/'+ imgSrc +'">');
+            $(".images").html(image);    
             var choicesArr = tva.questions[tva.current].choices;
             var buttonsArr = [];
 
             for (var i = 0; i < choicesArr.length; i++) {
+
                 var button = $('<button>');
                 button.text(choicesArr[i]);
                 button.attr('data-id', i);
@@ -116,6 +137,7 @@ $.fn.trivia = function() {
         $('div[id]').each(function(item) {
             $(this).html('');
         });
+        $(".images").html('');    
         $('.correct').html('Correct answers: ' + tva.answers.correct);
         $('.incorrect').html('Incorrect answers: ' + tva.answers.incorrect);
     };
