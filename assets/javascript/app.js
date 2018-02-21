@@ -15,11 +15,10 @@ $.fn.trivia = function() {
     tva.count = 30;
     tva.current = 0;
     tva.questions = [{
-        images: ["Kileaua.jpg"],
+        images: ["../images/Kileaua.jpg"],
         question: "Where can the most active volcano in the world be found?",
-        choices: ["Kileaua Volcano - United States", "Etna Volcano - Italy", "Ambrym Volcano - Vanuatu", "Eyjafjallajokull Volcano - Iceland"],
+        choices: ["Kilauea Volcano - United States", "Etna Volcano - Italy", "Ambrym Volcano - Vanuatu", "Eyjafjallajokull Volcano - Iceland"],
         correct: 0
-        
         
     }, {
         images: ["../images/guernica.jpg"],
@@ -58,25 +57,79 @@ $.fn.trivia = function() {
         correct: 0
 
     }, {
-        images: ["../images/machupicchu.jpg"],
-        question: "In what country would you find this ancient structure of Machu Picchu?",
-        choices: ["Peru", "Chile", "Mexico", "Cuba"],
-        correct: 0
+        images: ["../images/friedtarantula.jpg"],
+        question: "Fried Tarantulas are considered a delicacy in which country?",
+        choices: ["Vietnam", "China", "North Korea", "Cambodia"],
+        correct: 3
 
     }, {
-        images: ["../images/machupicchu.jpg"],
-        question: "In what country would you find this ancient structure of Machu Picchu?",
-        choices: ["Peru", "Chile", "Mexico", "Cuba"],
+        images: ["../images/lisbon.jpg"],
+        question: "What country has the most liberal recreational drug policy?",
+        choices: ["Netherlands", "Portugal", "Switzerland", "Czech Republic"],
+        correct: 1
+
+    },  {
+        images: ["../images/oilrefinery.jpg"],
+        question: "What country produces the most oil?",
+        choices: ["Russia", "United States", "Iran", "Saudi Arabia"],
+        correct: 3
+
+    },  {
+        images: ["../images/healthy.jpg"],
+        question: "What country is ranked as the healthiest overall based on factors like health risks, life expectancy, and causes of death?",
+        choices: ["Singapore", "Chile", "Italy", "Australia"],
+        correct: 2
+
+    },  {
+        images: ["../images/atlantis.jpg"],
+        question: "In what city is this underwater hotel found?",
+        choices: ["Dubai", "Cairns", "Orlando", "Papeete"],
         correct: 0
 
     },  {
-        images: ["../images/machupicchu.jpg"],
-        question: "In what country would you find this ancient structure of Machu Picchu?",
-        choices: ["Peru", "Chile", "Mexico", "Cuba"],
+        images: ["../images/ChristTheRedeemer.jpg"],
+        question: "Where can you find this statue?",
+        choices: ["Spain", "Brazil", "Mexico", "Italy"],
+        correct: 1
+
+    },  {
+        images: ["../images/coffeebeans.jpg"],
+        question: "Which country produces the most coffee?",
+        choices: ["United States", "South Africa", "Mexico", "Brazil"],
+        correct: 3
+
+    },  {
+        images: ["../images/scorpion_vodka.jpg"],
+        question: "In what country is the exotic drink of Scorpion Vodka famous?",
+        choices: ["Finland", "Russia", "England", "Netherlands"],
+        correct: 2
+
+    },  {
+        images: ["../images/languages.jpg"],
+        question: "In what country are the most languages spoken?",
+        choices: ["India", "China", "France", "Papau New Guinea"],
+        correct: 3
+
+    },  {
+        images: ["../images/coffee.jpg"],
+        question: "Which country is the largest consumer of coffee?",
+        choices: ["Serbia", "Finland", "Colombia", "China"],
+        correct: 1
+
+    },  {
+        images: ["../images/Everest.jpg"],
+        question: "Where is the tallest (highest altitude) mountain?",
+        choices: ["Mauna Kea - Hawaii, US", "Chimborazo - Ecuador", "K2 - China/Pakistan border", "Mt. Everest - China/Nepal border"],
+        correct: 3
+
+    },  {
+        images: ["../images/Norway.jpg"],
+        question: "According to the latest 'World Happiness Report' released in 2017, which measures how satisfied adults are with their lives, which country ranks higest?",
+        choices: ["Norway", "Switzerland", "New Zealand", "Denmark"],
         correct: 0
 
     },  {
-        images:["../images/olymp ics.jpg"],
+        images:["../images/olympics.jpg"],
         question: "Which country has had the honor of hosting the most Olympic Games?",
         choices: ["France", "United States", "Russia", "Japan"],
         correct: 1
@@ -152,6 +205,7 @@ var Trivia;
 
 $("#start_button").click(function() {
     $(this).hide();
+    $('#coverphoto').hide();
     $('.result').remove();
     $('div').html('');
     Trivia = new $(window).trivia();

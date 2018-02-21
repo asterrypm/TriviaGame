@@ -8,17 +8,35 @@ body {
  }
 
 div {
-  margin-bottom: 20px;
+  	margin-bottom: 20px;
+  	text-align: center;
+    text-transform: capitalize;
+    color: #444;
+    cursor: pointer;
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    width: 85%;
+    margin: 6px auto;
+
+    
 }
 .correct, .incorrect {
   text-transform: capitalize;
 }
 
 #coverphoto {
-	height: 25%;
-	width: 25%;
+	align-items: center;
+	width: 65%;
+	
+
 
 }
+
+/*section {
+	 width: 100%;
+	 text-align: center;
+}*/
 
 button {
     text-align: center;
@@ -27,7 +45,7 @@ button {
     cursor: pointer;
     padding: 10px 0;
     font-size: 1.2em;
-    width: 85%;
+    width: 65%;
     margin: 6px auto;
     border: 2px solid #d6d6d6;
     display: block;
@@ -39,11 +57,16 @@ button {
 	overflow: auto;
 
 }
+
+.images {
+	align-items: center;
+}
    
 
 .gameImage {
 	width:  270px !important;
 	height: 150px !important;
+	
 }
 
 header {
