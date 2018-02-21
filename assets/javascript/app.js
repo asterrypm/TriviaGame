@@ -208,6 +208,7 @@ $("#start_button").click(function() {
     $('#coverphoto').hide();
     $('.result').remove();
     $('div').html('');
+    $('.main-content').removeClass('secret');
     Trivia = new $(window).trivia();
     Trivia.ask();
 });
